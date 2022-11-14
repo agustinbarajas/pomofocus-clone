@@ -11,6 +11,6 @@ import { LightButtonComponent } from './components/light-button/light-button.com
   imports: [
     CommonModule
   ],
-  exports: [ ]
+  exports: [LightButtonComponent]
 })
 export class SharedModule { }
