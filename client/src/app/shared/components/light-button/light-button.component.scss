@@ -10,6 +10,10 @@
 
   &_light {
     background-color: $secondary-color-light;
+
+    &:hover {
+      background-color: rgba($secondary-color, 0.3);
+    }
   }
 
   &__icon {
