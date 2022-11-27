@@ -2,5 +2,15 @@
 @import 'index';
 
 body {
+  width: 38.75rem;
   background-color: $primary-color;
+  margin: auto;
+  padding: 1rem;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    width: 100%;
+  }
 }
