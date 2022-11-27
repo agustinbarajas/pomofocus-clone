@@ -12,10 +12,10 @@
   height: 100%;
 
   &_light {
-    background-color: $secondary-color-light;
+    background-color: rgba($secondary-color, 0.2);
 
     &:hover {
-      background-color: rgba($secondary-color, 0.3);
+      background-color: rgba($secondary-color, 0.22);
     }
   }
 
