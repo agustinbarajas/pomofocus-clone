@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'index';
 
+:root {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 16px;
+}
+
 body {
   width: 38.75rem;
   background-color: $primary-color;
   margin: auto;
   padding: 1rem;
-  font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 @media screen and (max-width: 576px) {
