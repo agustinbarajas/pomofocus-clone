@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Tab } from '../../interfaces/tab.interface';
 
 @Component({
   selector: 'app-tabs-container',
   templateUrl: './tabs-container.component.html',
-  styleUrls: ['./tabs-container.component.scss']
+  styleUrls: ['./tabs-container.component.scss'],
 })
-export class TabsContainerComponent { }
+export class TabsContainerComponent {
+  @Input() tabs!: Tab[];
+}
