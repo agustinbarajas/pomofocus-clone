@@ -1,5 +1,9 @@
 <section class="main">
   <app-header class="main__header"></app-header>
 
-  <app-tabs-container class="main__tabs"></app-tabs-container>
+  <app-tabs-container class="main__tabs" [tabs]="tabs"></app-tabs-container>
 </section>
+
+<ng-template #pomodoroTemplate></ng-template>
+<ng-template #shortBreakTemplate></ng-template>
+<ng-template #longBreakTemplate></ng-template>
