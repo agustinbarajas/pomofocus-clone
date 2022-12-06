@@ -1,4 +1,10 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { Tab } from 'src/app/shared/interfaces/tab.interface';
 
 @Component({
@@ -6,26 +12,43 @@ import { Tab } from 'src/app/shared/interfaces/tab.interface';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  @ViewChild('pomodoroTemplate') pomodoroRef!: TemplateRef<any>;
-  @ViewChild('shortBreakTemplate') shortRef!: TemplateRef<any>;
-  @ViewChild('longBreakTemplate') longRef!: TemplateRef<any>;
-  tabs: Tab[] = [
-    {
-      name: 'Pomodoro',
-      contentRef: this.pomodoroRef,
-      color: '',
-      isActive: true,
-    },
-    {
-      name: 'Short break',
-      contentRef: this.shortRef,
-      color: '',
-    },
-    {
-      name: 'Long break',
-      contentRef: this.longRef,
-      color: '',
-    },
-  ];
+export class HomeComponent implements AfterViewInit {
+  @ViewChild('pomodoroTemplate') pomodoroTemplate!: TemplateRef<HTMLElement>;
+  @ViewChild('shortBreakTemplate')
+  shortBreakTemplate!: TemplateRef<HTMLElement>;
+  @ViewChild('longBreakTemplate') longBreakTemplate!: TemplateRef<HTMLElement>;
+  tabs: Tab[] = [];
+  selectedTab!: Tab;
+
+  constructor(private readonly cdr: ChangeDetectorRef) {}
+
+  ngAfterViewInit() {
+    this.tabs = [
+      {
+        id: 1,
+        name: 'Pomodoro',
+        templateRef: this.pomodoroTemplate,
+        color: '',
+        isActive: true,
+      },
+      {
+        id: 2,
+        name: 'Short break',
+        templateRef: this.shortBreakTemplate,
+        color: '',
+      },
+      {
+        id: 3,
+        name: 'Long break',
+        templateRef: this.longBreakTemplate,
+        color: '',
+      },
+    ];
+    this.selectedTab = this.tabs[0];
+    this.cdr.detectChanges();
+  }
+
+  selectTab(tab: Tab) {
+    this.selectedTab = tab;
+  }
 }
