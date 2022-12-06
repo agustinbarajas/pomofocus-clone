@@ -1,11 +1,12 @@
 <section class="tabs">
   <div class="tabs__header">
     <button
-      *ngFor="let tab of tabs"
+      *ngFor="let tab of tabs; trackBy: trackCurrentTab"
       [ngClass]="{
         'tabs__header-tab': true,
         'tabs__header-tab_active': tab.isActive
       }"
+      (click)="changeTab(tab)"
     >
       {{ tab.name }}
     </button>
