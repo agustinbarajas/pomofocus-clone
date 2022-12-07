@@ -1,7 +1,9 @@
+import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
+  Inject,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -25,7 +27,10 @@ export class HomeComponent implements AfterViewInit {
   tabs: Tab[] = [];
   selectedTab!: Tab;
 
-  constructor(private readonly cdr: ChangeDetectorRef) {}
+  constructor(
+    private readonly cdr: ChangeDetectorRef,
+    @Inject(DOCUMENT) private readonly document: Document
+  ) {}
 
   ngAfterViewInit() {
     this.tabs = [
@@ -55,5 +60,9 @@ export class HomeComponent implements AfterViewInit {
 
   selectTab(tab: Tab) {
     this.selectedTab = tab;
+    this.document.body.style.setProperty(
+      '--primary-color',
+      tab.color as string
+    );
   }
 }
