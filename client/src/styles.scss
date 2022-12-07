@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'index';
+@import "index";
 
 :root {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 16px;
+  --primary-color: #{$primary-color};
 }
 
 body {
   width: 38.75rem;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   margin: auto;
   padding: 1rem;
 }
