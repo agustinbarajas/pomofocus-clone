@@ -5,6 +5,11 @@ import {
   TemplateRef,
   ViewChild,
 } from '@angular/core';
+import {
+  LONGBREAK_BG_COLOR,
+  POMODORO_BG_COLOR,
+  SHORTBREAK_BG_COLOR,
+} from 'src/app/shared/constants/colors.const';
 import { Tab } from 'src/app/shared/interfaces/tab.interface';
 
 @Component({
@@ -28,20 +33,20 @@ export class HomeComponent implements AfterViewInit {
         id: 1,
         name: 'Pomodoro',
         templateRef: this.pomodoroTemplate,
-        color: '',
+        color: POMODORO_BG_COLOR,
         isActive: true,
       },
       {
         id: 2,
         name: 'Short break',
         templateRef: this.shortBreakTemplate,
-        color: '',
+        color: SHORTBREAK_BG_COLOR,
       },
       {
         id: 3,
         name: 'Long break',
         templateRef: this.longBreakTemplate,
-        color: '',
+        color: LONGBREAK_BG_COLOR,
       },
     ];
     this.selectedTab = this.tabs[0];
