@@ -1,1 +1,26 @@
-<p>timer works!</p>
+<section class="timer">
+  <p class="timer__minutes">{{ minutes | parseTimer }}</p>
+  <div class="timer__actions">
+    <button
+      [class]="{
+        timer__button: true,
+        timer__button_clicked: true
+      }"
+    >
+      {{ textButton }}
+    </button>
+
+    <button
+      [class]="{
+        timer__skip: true,
+        timer__skip_hidden: true
+      }"
+    >
+      <img
+        class="timer__skip-icon"
+        src="./assets/icons/next-white.png"
+        alt="Skip interval"
+      />
+    </button>
+  </div>
+</section>
