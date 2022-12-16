@@ -69,5 +69,9 @@ export class TimerComponent implements OnInit {
     this.remainMinutes = this.minutes;
   }
 
-  skipTimer() {}
+  skipTimer() {
+    this.timerSkipped.emit();
+    this.timer?.unsubscribe();
+    this.resetTimer();
+  }
 }
