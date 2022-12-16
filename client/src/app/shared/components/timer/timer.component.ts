@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import {
   last,
   Subject,
@@ -18,7 +25,7 @@ import {
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss'],
 })
-export class TimerComponent implements OnInit {
+export class TimerComponent implements OnInit, OnDestroy {
   @Input() minutes!: number;
   @Input() textButton = 'Start';
   @Output() timerStarted = new EventEmitter<void>();
@@ -73,5 +80,11 @@ export class TimerComponent implements OnInit {
     this.timerSkipped.emit();
     this.timer?.unsubscribe();
     this.resetTimer();
+  }
+
+  ngOnDestroy(): void {
+    this.timer?.unsubscribe();
+    this.unsubscribe$.next(true);
+    this.unsubscribe$.complete();
   }
 }
