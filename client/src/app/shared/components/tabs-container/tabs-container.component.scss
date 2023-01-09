@@ -1,4 +1,4 @@
-@import 'index';
+@import "index";
 
 .tabs {
   display: flex;
@@ -33,5 +33,6 @@
 
   &__content {
     width: 100%;
+    padding-top: 1rem;
   }
 }

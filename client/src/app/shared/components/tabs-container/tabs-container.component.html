@@ -1,8 +1,15 @@
 <section class="tabs">
   <div class="tabs__header">
-    <button class="tabs__header-tab tabs__header-tab_active">Pomodoro</button>
-    <button class="tabs__header-tab">Short break</button>
-    <button class="tabs__header-tab">Long break</button>
+    <button
+      *ngFor="let tab of tabs; trackBy: trackCurrentTab"
+      [ngClass]="{
+        'tabs__header-tab': true,
+        'tabs__header-tab_active': tab.isActive
+      }"
+      (click)="changeTab(tab)"
+    >
+      {{ tab.name }}
+    </button>
   </div>
 
   <div class="tabs__content">

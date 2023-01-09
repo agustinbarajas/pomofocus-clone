@@ -1,5 +1,16 @@
 <section class="main">
   <app-header class="main__header"></app-header>
 
-  <app-tabs-container class="main__tabs"></app-tabs-container>
+  <app-tabs-container
+    *ngIf="tabs.length"
+    class="main__tabs"
+    [tabs]="tabs"
+    (selectTab)="selectTab($event)"
+  >
+    <ng-container *ngTemplateOutlet="selectedTab.templateRef"></ng-container>
+  </app-tabs-container>
 </section>
+
+<ng-template #pomodoroTemplate><div>Pomodoro template</div></ng-template>
+<ng-template #shortBreakTemplate> Short break template </ng-template>
+<ng-template #longBreakTemplate> Long break template </ng-template>
