@@ -1,4 +1,4 @@
 <button class="button button_light" (click)="onClick()">
-  <img class="button__icon" [src]="icon" alt=""/>
-  <span class="button__text">{{ text }}</span>
+  <img class="button__icon" [src]="icon" alt="" />
+  <span class="button__text" *ngIf="text">{{ text }}</span>
 </button>
