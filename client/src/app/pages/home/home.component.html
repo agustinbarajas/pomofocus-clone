@@ -9,6 +9,11 @@
   >
     <ng-container *ngTemplateOutlet="selectedTab.templateRef"></ng-container>
   </app-tabs-container>
+
+  <p class="main__count">#0</p>
+  <p class="main__task">Time to focus!</p>
+
+  <app-tasks class="main__tasks-list"></app-tasks>
 </section>
 
 <ng-template #pomodoroTemplate>
