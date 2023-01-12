@@ -1,1 +1,26 @@
-<p>tasks works!</p>
+<section class="tasks">
+  <div class="tasks__header">
+    <label class="tasks__header-title">Tasks</label>
+    <app-light-button
+      icon="assets/icons/threedots-white.png"
+    ></app-light-button>
+  </div>
+
+  <div class="tasks__list">
+    <app-task-item></app-task-item>
+  </div>
+
+  <button class="tasks__add-button">
+    <img
+      class="tasks__add-button__icon"
+      src="assets/icons/plus-circle-white.png"
+      alt=""
+    />
+    Add Task
+  </button>
+  <div class="tasks__footer">
+    <span>Est: <strong>8</strong></span>
+    <span>Act: <strong>7</strong></span>
+    <span>Finish at <strong>19:20</strong></span>
+  </div>
+</section>
