@@ -9,8 +9,19 @@
   >
     <ng-container *ngTemplateOutlet="selectedTab.templateRef"></ng-container>
   </app-tabs-container>
+
+  <p class="main__count">#0</p>
+  <p class="main__task">Time to focus!</p>
+
+  <app-tasks class="main__tasks-list"></app-tasks>
 </section>
 
-<ng-template #pomodoroTemplate><div>Pomodoro template</div></ng-template>
-<ng-template #shortBreakTemplate> Short break template </ng-template>
-<ng-template #longBreakTemplate> Long break template </ng-template>
+<ng-template #pomodoroTemplate>
+  <app-timer [minutes]="25"></app-timer>
+</ng-template>
+<ng-template #shortBreakTemplate>
+  <app-timer [minutes]="5"></app-timer>
+</ng-template>
+<ng-template #longBreakTemplate>
+  <app-timer [minutes]="15"></app-timer>
+</ng-template>

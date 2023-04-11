@@ -1,0 +1,28 @@
+<article class="task">
+  <div class="task__title">
+    <button
+      [class]="{
+        'task__title-icon': true,
+        'task__title-icon_unchecked': false,
+        'task__title-icon_checked': true
+      }"
+    ></button>
+    <p
+      [class]="{
+        'task__title-name': true,
+        'task__title-name_done': true,
+        'task__title-name_pending': false
+      }"
+    >
+      Task 1
+    </p>
+  </div>
+
+  <div class="task__actions">
+    <p class="task__actions-time">5/1</p>
+    <app-light-button
+      class="task__actions-button"
+      icon="assets/icons/vertical-ellipsis.png"
+    ></app-light-button>
+  </div>
+</article>
